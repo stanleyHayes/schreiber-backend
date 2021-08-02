@@ -98,7 +98,7 @@ const userSchema = new Schema({
         type: [Schema.Types.ObjectId],
         ref: 'User'
     }
-});
+}, {timestamps: {createdAt: true, updatedAt: true}});
 
 
 const User = mongoose.model('User', userSchema);

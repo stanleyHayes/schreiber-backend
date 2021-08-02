@@ -2,6 +2,7 @@ const dotenv = require('dotenv');
 const express = require('express');
 const morgan = require('morgan');
 const mongoose = require('mongoose');
+const useragent = require('express-useragent');
 
 dotenv.config();
 
@@ -21,6 +22,7 @@ const app = express();
 
 app.use(express.json());
 app.use(morgan('dev'));
+app.use(useragent.express());
 
 const PORT = process.env.PORT || 8000;
 
